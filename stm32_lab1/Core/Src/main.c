@@ -205,11 +205,28 @@ int main(void)
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
-  int h=7;
+  int s =0;
+  int m =0;
+  int h =0;
   while (1)
   {
-	  clearNumberOnClock(h);
-	  HAL_Delay(1000);
+	  clearAllClock();
+	  s++;
+	  if (s >=60) {
+		  s =0;
+		  m++;
+	  }
+	  if (m >=60) {
+		  m =0;
+		  h++;
+	  }
+	  if (h >=24) {
+		  h =0;
+	  }
+	  setNumberOnClock(s/5);
+	  setNumberOnClock(m/5);
+	  setNumberOnClock(h);
+	  HAL_Delay(5);
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
