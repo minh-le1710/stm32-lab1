@@ -63,6 +63,21 @@ void LED_Test (int count){
 	if(count ==11) {HAL_GPIO_TogglePin(GPIOA, GPIO_PIN_14);}
 	if(count ==12) {HAL_GPIO_TogglePin(GPIOA, GPIO_PIN_15);}
 }
+void clearAllClock()
+{
+    HAL_GPIO_WritePin(GPIOA, GPIO_PIN_4, GPIO_PIN_SET);
+    HAL_GPIO_WritePin(GPIOA, GPIO_PIN_5, GPIO_PIN_SET);
+    HAL_GPIO_WritePin(GPIOA, GPIO_PIN_6, GPIO_PIN_SET);
+    HAL_GPIO_WritePin(GPIOA, GPIO_PIN_7, GPIO_PIN_SET);
+    HAL_GPIO_WritePin(GPIOA, GPIO_PIN_8, GPIO_PIN_SET);
+    HAL_GPIO_WritePin(GPIOA, GPIO_PIN_9, GPIO_PIN_SET);
+    HAL_GPIO_WritePin(GPIOA, GPIO_PIN_10, GPIO_PIN_SET);
+    HAL_GPIO_WritePin(GPIOA, GPIO_PIN_11, GPIO_PIN_SET);
+    HAL_GPIO_WritePin(GPIOA, GPIO_PIN_12, GPIO_PIN_SET);
+    HAL_GPIO_WritePin(GPIOA, GPIO_PIN_13, GPIO_PIN_SET);
+    HAL_GPIO_WritePin(GPIOA, GPIO_PIN_14, GPIO_PIN_SET);
+    HAL_GPIO_WritePin(GPIOA, GPIO_PIN_15, GPIO_PIN_SET);
+}
 /* USER CODE END PFP */
 
 /* Private user code ---------------------------------------------------------*/
@@ -107,9 +122,8 @@ int main(void)
   int counter=0;
   while (1)
   {
-	  LED_Test(counter++);
-	  if (counter>12) counter =0;
-	  HAL_Delay(500);
+	  HAL_Delay(2000);
+	  clearAllClock();
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
